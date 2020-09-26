@@ -7,30 +7,38 @@ namespace Pracs2
         public static void Main(string[] args)
         {
           
-            Console.WriteLine("Enter 1 for present and 0 for absent");
-            Random random = new Random();
-            //int n = Convert.ToInt32(Console.ReadLine());
-            int n = random.Next(0, 2);
-            String att = "";
-            if (n == 1)
-            {
-                att += "Present";
-            }
-            else
-            {
-                att += "Absent";
-            }
-            Console.WriteLine(att);
+          
             int wages_per_hour = 20;
             int hours = 0;
             int wages = 0;
+            int total_hours = 0;
+
+            Random random = new Random();
             
-            //int n1 = random.Next(0, 2);
-            if (n == 1)
+            for(int i = 1; i <= 20; i++)
             {
-                hours = 8;
+                int emp_rec = random.Next(0, 3);
+                switch (emp_rec)
+                {
+                    case 0:
+                        hours = 0;
+                        break;
+                    case 1:
+                        hours = 8;
+                        break;
+                    case 2:
+                        hours= 4;
+                        break;
+                }
+                total_hours += hours;
+
+                if (total_hours >= 100)
+                {
+                    break;
+                }
+
             }
-            wages = hours * wages_per_hour;
+            wages = total_hours * wages_per_hour;
             Console.WriteLine("Total wages of an employee: "+wages);
 
         }
