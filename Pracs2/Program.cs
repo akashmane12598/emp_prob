@@ -21,6 +21,17 @@ namespace Pracs2
                 att += "Absent";
             }
             Console.WriteLine(att);
+            int wages_per_hour = 20;
+            int hours = 0;
+            int wages = 0;
+            
+            //int n1 = random.Next(0, 2);
+            if (n == 1)
+            {
+                hours = 8;
+            }
+            wages = hours * wages_per_hour;
+            Console.WriteLine("Total wages of an employee: "+wages);
 
         }
     }
