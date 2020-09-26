@@ -6,7 +6,17 @@ namespace Pracs2
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to employee attendance");
+            int wages_per_hour = 20;
+            int hours = 0;
+            int wages = 0;
+            Random random = new Random();
+            int n = random.Next(0, 2);
+            if (n == 1)
+            {
+                hours = 8;
+            }
+            wages = hours * wages_per_hour;
+            Console.WriteLine("Total wages of an employee: "+wages);
 
         }
     }
