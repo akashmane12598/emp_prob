@@ -12,8 +12,8 @@ namespace Pracs2
             int hours = 0;
             int wages = 0;
             
-            int n = random.Next(0, 2);
-            switch (n)
+            int emp_rec = random.Next(0, 3);
+            switch (emp_rec)
             {
                 case 0:
                     hours = 0;
