@@ -17,8 +17,8 @@ namespace Pracs2
 
             for (int i = 1; i <= 20; i++)
             {
-                int emp_rec = random.Next(0, 3);
-                switch (emp_rec)
+                int n = random.Next(0, 3);
+                switch (n)
                 {
                     case 0:
                         hours = 0;
