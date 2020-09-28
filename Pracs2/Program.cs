@@ -26,20 +26,23 @@ namespace Pracs2
             while (days <= total_days && total_hours <= max_hours)
             {
                 int n = random.Next(0, 3);
-                switch (n)
+                if (n == 2)
                 {
-                    case 0:
-                        hours = 0;
-                        break;
-                    case 1:
-                        hours = 8;
-                        break;
-                    case 2:
-                        hours = 4;
-                        break;
+                    switch (n)
+                    {
+                        case 0:
+                            hours = 0;
+                            break;
+                        case 1:
+                            hours = 8;
+                            break;
+                        case 2:
+                            hours = 4;
+                            break;
+                    }
+                    total_hours += hours;
+                    days++;
                 }
-                total_hours += hours;
-                days++;
             }
             wages = total_hours * wages_per_hour;
             return wages;
