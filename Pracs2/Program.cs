@@ -12,10 +12,11 @@ namespace Pracs2
             int hours = 0;
             int wages = 0;
             int total_hours = 0;
+            int days = 1;
 
             Random random = new Random();
             
-            for(int i = 1; i <= 20; i++)
+            while(days<=20 || total_hours<=100)
             {
                 int n = random.Next(0, 3);
                 switch (n)
@@ -31,12 +32,7 @@ namespace Pracs2
                         break;
                 }
                 total_hours += hours;
-
-                if (total_hours >= 100)
-                {
-                    break;
-                }
-
+                days++;
             }
             wages = total_hours * wages_per_hour;
             Console.WriteLine("Total wages of an employee: "+wages);
