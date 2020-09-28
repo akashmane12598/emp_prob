@@ -6,20 +6,26 @@ namespace Pracs2
     {
         public static void Main(string[] args)
         {
+
             Console.WriteLine("Welcome to employee wages problem");
             Random random = new Random();
-            int n = random.Next(0, 3);
+
             int wages_per_hour = 20;
             int hours = 0;
             int wages = 0;
-     
-            if (n == 1)
+            
+            int n = random.Next(0, 3);
+            switch (n)
             {
-                hours = 8;
-            }
-            else if (n == 2)
-            {
-                hours = 4;
+                case 0:
+                    hours = 0;
+                    break;
+                case 1:
+                    hours = 8;
+                    break;
+                case 2:
+                    hours = 4;
+                    break;
             }
             wages = hours * wages_per_hour;
             Console.WriteLine("Total wages of an employee: "+wages);
