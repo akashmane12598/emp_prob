@@ -13,22 +13,28 @@ namespace Pracs2
             int wages_per_hour = 20;
             int hours = 0;
             int wages = 0;
-            
-            int n = random.Next(0, 3);
-            switch (n)
+            int total_hours = 0;
+
+            for (int i = 1; i <= 20; i++)
             {
-                case 0:
-                    hours = 0;
-                    break;
-                case 1:
-                    hours = 8;
-                    break;
-                case 2:
-                    hours = 4;
-                    break;
+                int n = random.Next(0, 3);
+                switch (n)
+                {
+                    case 0:
+                        hours = 0;
+                        break;
+                    case 1:
+                        hours = 8;
+                        break;
+                    case 2:
+                        hours = 4;
+                        break;
+                }
+                total_hours += hours;
+
             }
-            wages = hours * wages_per_hour;
-            Console.WriteLine("Total wages of an employee: "+wages);
+            wages = total_hours * wages_per_hour;
+            Console.WriteLine("Total wages of an employee: " + wages);
 
         }
     }
