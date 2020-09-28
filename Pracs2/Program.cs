@@ -16,7 +16,7 @@ namespace Pracs2
 
             Random random = new Random();
             
-            while(days<=20 || total_hours<=100)
+            while(days<=20 && total_hours<=100)
             {
                 int n = random.Next(0, 3);
                 switch (n)
