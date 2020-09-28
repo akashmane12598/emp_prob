@@ -6,6 +6,7 @@ namespace Pracs2
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to employee wages");
             Random random = new Random();
             int n = random.Next(0, 3);
             int wages_per_hour = 20;
