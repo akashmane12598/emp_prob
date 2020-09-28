@@ -6,8 +6,10 @@ namespace Pracs2
     {
         public static void Main(string[] args)
         {
-          
-          
+            compute_emp();
+        }
+        public static void compute_emp()
+        {
             int wages_per_hour = 20;
             int hours = 0;
             int wages = 0;
@@ -15,8 +17,8 @@ namespace Pracs2
             int days = 1;
 
             Random random = new Random();
-            
-            while(days<=20 || total_hours<=100)
+
+            while (days <= 20 && total_hours <= 100)
             {
                 int n = random.Next(0, 3);
                 switch (n)
@@ -28,15 +30,14 @@ namespace Pracs2
                         hours = 8;
                         break;
                     case 2:
-                        hours= 4;
+                        hours = 4;
                         break;
                 }
                 total_hours += hours;
                 days++;
             }
             wages = total_hours * wages_per_hour;
-            Console.WriteLine("Total wages of an employee: "+wages);
-
+            Console.WriteLine("Total wages of an employee: " + wages);
         }
     }
 }
