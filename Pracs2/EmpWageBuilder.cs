@@ -6,27 +6,27 @@ namespace Pracs2
 {
     class EmpWageBuilder : Company
     {
-        private int totalCompany = 0;
 
-        private CompanyEmp[] companyEmp;
+        private Dictionary<string,CompanyEmp> companyEmp;
 
         public EmpWageBuilder()
         {
-            this.companyEmp = new CompanyEmp[5];
+            this.companyEmp = new Dictionary<string, CompanyEmp>();
         }
 
         public void addCompany(string company_name, int emp_wages, int total_days, int max_hours)
         {
-            companyEmp[this.totalCompany] = new CompanyEmp(company_name, emp_wages, total_days, max_hours);
-            totalCompany++;
+            companyEmp.Add(company_name, new CompanyEmp(company_name, emp_wages, total_days, max_hours));
         }
 
         public void compute_emp()
         {
-            for (int i = 0; i < this.totalCompany; i++)
+            foreach (KeyValuePair<string,CompanyEmp> kv in companyEmp )
             {
-                int wages = calculate_wages(companyEmp[i].total_days, companyEmp[i].max_hours);
-                Console.WriteLine("Total wages of an employee in the company " + companyEmp[i].company_name + " is " + wages);
+                string cmp_name = kv.Key;
+                CompanyEmp c = kv.Value;
+                int wages = calculate_wages(c.total_days,c.max_hours);
+                Console.WriteLine("Total wages of an employee in the company "+ cmp_name+" is "+ wages);
             }
         }
 
